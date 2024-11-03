@@ -5,14 +5,6 @@ import Project from './Project';
 function Portfolio() {
   const projects = [
     {
-      title: "Bucket List App",
-      description: "A full-stack application built with React and Node.js",
-      Technologies: "HTML, Javascript, REACT and Node.js",
-      image: "/images/Bucklist App Image.jpg", 
-      deployedLink: "https://gorgeous-ganache-bcb5d9.netlify.app/",
-      githubLink: "https://github.com/nandyamit/bucketlist"
-    },
-    {
       title: "Weather Dashboard",
       description: "The Weather Dashboard is a web application designed for travelers who want to see the weather outlook for multiple cities. This tool allows users to plan their trips according to current and future weather conditions in various locations.",
       Technologies: "HTML, Javascript, Node.js with Express.js and Weather Data using OpenWeather API",
@@ -20,6 +12,15 @@ function Portfolio() {
       deployedLink: "https://weather-app-u1xb.onrender.com/",
       githubLink: "https://github.com/nandyamit/Weather-App"
     },
+    {
+      title: "Bucket List App",
+      description: "A full-stack application built with React and Node.js",
+      Technologies: "HTML, Javascript, REACT and Node.js",
+      image: "/images/Bucklist App Image.jpg", 
+      deployedLink: "https://gorgeous-ganache-bcb5d9.netlify.app/",
+      githubLink: "https://github.com/nandyamit/bucketlist"
+    },
+    
   ];
 
   return (
