@@ -29,13 +29,16 @@ To run this portfolio locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/portfolio
+git clone https://github.com/nandyamit/my_react_portfolio.git
 
 # Navigate to the project directory
-cd portfolio
+cd my_react_portfolio
 
 # Install dependencies
 npm install
+
+# Run build
+npm run build
 
 # Start the development server
 npm run dev
@@ -60,13 +63,13 @@ After installation, the application will be available at `http://localhost:5173/
 - npm
 
 ## Screenshots
-![About Page](/path-to-screenshot1.png)
+![About Page](/public/images/about page.jpg)
 *About page featuring professional information*
 
-![Portfolio Page](/path-to-screenshot2.png)
+![Portfolio Page](/public/images/portfolio page.jpg)
 *Portfolio page showcasing projects*
 
-![Contact Page](/path-to-screenshot3.png)
+![Contact Page](/public/images/contact page.jpg)
 *Contact form with validation*
 
 ## Deployment
@@ -92,6 +95,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Questions
 If you have any questions or would like to discuss this project, feel free to contact me:
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
+- GitHub: [@yourusername](https://github.com/nandyamit)
+- Email: nandyamit.in@gmail.com
+- LinkedIn: [Your Name](https://www.linkedin.com/in/amit-nandy-bab83014/)
