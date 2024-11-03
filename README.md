@@ -62,18 +62,8 @@ After installation, the application will be available at `http://localhost:5173/
 - Node.js
 - npm
 
-## Screenshots
-![About Page](/public/images/about page.jpg)
-*About page featuring professional information*
-
-![Portfolio Page](/public/images/portfolio page.jpg)
-*Portfolio page showcasing projects*
-
-![Contact Page](/public/images/contact page.jpg)
-*Contact form with validation*
-
 ## Deployment
-This application is deployed on [Platform Name]. You can view the live site at: [URL]
+This application is deployed on [Platform Name]. You can view the live site at: [https://amitnandy.netlify.app/]
 
 ### Deployment Instructions
 1. Build the project:
@@ -95,6 +85,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Questions
 If you have any questions or would like to discuss this project, feel free to contact me:
 
-- GitHub: [@yourusername](https://github.com/nandyamit)
+- GitHub: [@nandyamit](https://github.com/nandyamit)
 - Email: nandyamit.in@gmail.com
-- LinkedIn: [Your Name](https://www.linkedin.com/in/amit-nandy-bab83014/)
+- LinkedIn: [Amit Nandy](https://www.linkedin.com/in/amit-nandy-bab83014/)
