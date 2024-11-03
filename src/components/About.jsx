@@ -16,17 +16,13 @@ function About() {
         
         <div className="prose lg:prose-lg mx-auto">
           <p className="text-gray-600 leading-relaxed mb-4">
-            Hello! I'm Amit Nandy, a full-stack web developer passionate about creating
-            interactive and responsive web applications. 
+            Hello! I'm Amit Nandy, a Technical Product Manager with over 10+ years of experience in building and scaling products for large tech companies. My experience in technical product management and knowledge about software development allows me to bridge the gap between user needs and technical feasibility. When I'm not crafting product roadmaps or running sprint planning sessions, you'll find me coding side projects and exploring new technologies. I believe in leading by example and maintaining my technical edge while driving product vision.
+ 
           </p>
-          
-          <p className="text-gray-600 leading-relaxed mb-4">
-            I specialize in JavaScript, React, Node.js, and modern web technologies.
-            
-          </p>
-          
+                            
+                    
           <p className="text-gray-600 leading-relaxed">
-            I'm always interested in new technologies and opportunities to grow as a developer.
+            I'm always interested in new technologies and opportunities to grow as a professional.
             Feel free to check out my portfolio or reach out if you'd like to connect!
           </p>
         </div>
