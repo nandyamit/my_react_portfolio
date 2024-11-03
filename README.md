@@ -62,8 +62,18 @@ After installation, the application will be available at `http://localhost:5173/
 - Node.js
 - npm
 
+## Screenshots
+![About Page](https://github.com/nandyamit/my_react_portfolio/blob/main/public/images/about%20page.jpg)
+*About page featuring professional information*
+
+![Portfolio Page](https://github.com/nandyamit/my_react_portfolio/blob/main/public/images/portfolio%20page.jpg)
+*Portfolio page showcasing projects*
+
+![Contact Page](https://github.com/nandyamit/my_react_portfolio/blob/main/public/images/contact%20page.jpg)
+*Contact form with validation*
+
 ## Deployment
-This application is deployed on [Platform Name]. You can view the live site at: [https://amitnandy.netlify.app/]
+This application is deployed on Netlify. You can view the live site at: [https://amitnandy.netlify.app/]
 
 ### Deployment Instructions
 1. Build the project:
