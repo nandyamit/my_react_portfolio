@@ -9,30 +9,124 @@ function Contact() {
     message: ''
   });
   const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState({
+    message: '',
+    isError: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = (e) => {
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
+  };
+
+  const validateField = (name, value) => {
+    let newErrors = { ...errors };
+    
+    if (!value.trim()) {
+      newErrors[name] = 'This field is required';
+    } else {
+      if (name === 'email' && !validateEmail(value)) {
+        newErrors[name] = 'Please enter a valid email address';
+      } else {
+        delete newErrors[name];
+      }
+    }
+    
+    setErrors(newErrors);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
+    
+    // Validate all fields
+    let hasErrors = false;
+    const newErrors = {};
+    
+    Object.keys(formData).forEach(key => {
+      if (!formData[key].trim()) {
+        newErrors[key] = 'This field is required';
+        hasErrors = true;
+      } else if (key === 'email' && !validateEmail(formData[key])) {
+        newErrors[key] = 'Please enter a valid email address';
+        hasErrors = true;
+      }
+    });
+
+    setErrors(newErrors);
+
+    if (!hasErrors) {
+      setIsSubmitting(true);
+      setSubmitStatus({ message: '', isError: false });
+
+      try {
+        const response = await fetch('http://localhost:3001/api/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to send message');
+        }
+
+        // Clear form on success
+        setFormData({ name: '', email: '', message: '' });
+        setSubmitStatus({
+          message: 'Message sent successfully!',
+          isError: false
+        });
+      } catch (error) {
+        console.error('Error sending message:', error);
+        setSubmitStatus({
+          message: 'Failed to send message. Please try again.',
+          isError: true
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
+      {submitStatus.message && (
+        <div className={`mb-4 p-3 rounded ${
+          submitStatus.isError ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+        }`}>
+          {submitStatus.message}
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="max-w-lg">
         <div className="mb-4">
           <label htmlFor="name" className="block mb-2">Name:</label>
           <input
             type="text"
             id="name"
+            name="name"
             value={formData.name}
-            onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className="w-full p-2 border rounded"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`w-full p-2 border rounded ${errors.name ? 'border-red-500' : ''}`}
           />
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+          )}
         </div>
         
         <div className="mb-4">
@@ -40,24 +134,40 @@ function Contact() {
           <input
             type="email"
             id="email"
+            name="email"
             value={formData.email}
-            onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className="w-full p-2 border rounded"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`w-full p-2 border rounded ${errors.email ? 'border-red-500' : ''}`}
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
         </div>
         
         <div className="mb-4">
           <label htmlFor="message" className="block mb-2">Message:</label>
           <textarea
             id="message"
+            name="message"
             value={formData.message}
-            onChange={(e) => setFormData({...formData, message: e.target.value})}
-            className="w-full p-2 border rounded h-32"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`w-full p-2 border rounded h-32 ${errors.message ? 'border-red-500' : ''}`}
           />
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+          )}
         </div>
         
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-          Send Message
+        <button 
+          type="submit" 
+          className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors ${
+            isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>
