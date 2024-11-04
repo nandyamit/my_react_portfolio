@@ -51,49 +51,32 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate all fields
-    let hasErrors = false;
-    const newErrors = {};
-    
-    Object.keys(formData).forEach(key => {
-      if (!formData[key].trim()) {
-        newErrors[key] = 'This field is required';
-        hasErrors = true;
-      } else if (key === 'email' && !validateEmail(formData[key])) {
-        newErrors[key] = 'Please enter a valid email address';
-        hasErrors = true;
-      }
-    });
-
-    setErrors(newErrors);
-
     if (!hasErrors) {
       setIsSubmitting(true);
       setSubmitStatus({ message: '', isError: false });
-
+  
       try {
-        const response = await fetch('http://localhost:3001/api/messages', {
+        const response = await fetch('/.netlify/functions/submit-contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(formData)
         });
-
+  
         if (!response.ok) {
           throw new Error('Failed to send message');
         }
-
-        // Clear form on success
+  
         setFormData({ name: '', email: '', message: '' });
         setSubmitStatus({
-          message: 'Message sent successfully!',
+          message: 'Message sent successfully! I will get back to you soon.',
           isError: false
         });
       } catch (error) {
         console.error('Error sending message:', error);
         setSubmitStatus({
-          message: 'Failed to send message. Please try again.',
+          message: 'Failed to send message. Please try again or email me directly.',
           isError: true
         });
       } finally {
