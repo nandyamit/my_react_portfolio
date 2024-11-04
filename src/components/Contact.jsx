@@ -1,6 +1,5 @@
 // src/components/Contact.jsx
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -13,7 +12,6 @@ function Contact() {
     message: '',
     isError: false
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -29,12 +27,10 @@ function Contact() {
     
     if (!value.trim()) {
       newErrors[name] = 'This field is required';
+    } else if (name === 'email' && !validateEmail(value)) {
+      newErrors[name] = 'Please enter a valid email address';
     } else {
-      if (name === 'email' && !validateEmail(value)) {
-        newErrors[name] = 'Please enter a valid email address';
-      } else {
-        delete newErrors[name];
-      }
+      delete newErrors[name];
     }
     
     setErrors(newErrors);
@@ -42,45 +38,54 @@ function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [name]: value
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!hasErrors) {
-      setIsSubmitting(true);
-      setSubmitStatus({ message: '', isError: false });
-  
+    // Validate all fields
+    const newErrors = {};
+    Object.keys(formData).forEach(key => {
+      if (!formData[key].trim()) {
+        newErrors[key] = 'This field is required';
+      } else if (key === 'email' && !validateEmail(formData[key])) {
+        newErrors[key] = 'Please enter a valid email address';
+      }
+    });
+
+    setErrors(newErrors);
+
+    // If no errors, submit form
+    if (Object.keys(newErrors).length === 0) {
       try {
-        const response = await fetch('/.netlify/functions/submit-contact', {
+        const response = await fetch('http://localhost:3001/api/messages', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(formData)
         });
-  
+
         if (!response.ok) {
           throw new Error('Failed to send message');
         }
-  
+
+        // Clear form
         setFormData({ name: '', email: '', message: '' });
         setSubmitStatus({
-          message: 'Message sent successfully! I will get back to you soon.',
+          message: 'Message sent successfully!',
           isError: false
         });
       } catch (error) {
         console.error('Error sending message:', error);
         setSubmitStatus({
-          message: 'Failed to send message. Please try again or email me directly.',
+          message: 'Failed to send message. Please try again.',
           isError: true
         });
-      } finally {
-        setIsSubmitting(false);
       }
     }
   };
@@ -145,12 +150,9 @@ function Contact() {
         
         <button 
           type="submit" 
-          className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors ${
-            isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
-          disabled={isSubmitting}
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          Send Message
         </button>
       </form>
     </div>
