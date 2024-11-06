@@ -20,6 +20,14 @@ function Portfolio() {
       deployedLink: "https://gorgeous-ganache-bcb5d9.netlify.app/",
       githubLink: "https://github.com/nandyamit/bucketlist"
     },
+    {
+      title: "Film Tracker App",
+      description: "A React-TypeScript application that helps you track films you want to watch and ones you've already seen. The app uses the OMDB API for film data and localStorage for persisting your film lists.",
+      Technologies: "React 18.2.0, TypeScript 5.2.2, Vite 5.2.0, React Router DOM 6.23.1, React Icons 5.2.1, OMDB API, localStorage for data persistence.",
+      image: "/images/Filmtracker_app.jpg", 
+      deployedLink: "https://myfilmtracker.netlify.app/",
+      githubLink: "https://github.com/nandyamit/Film-Tracker"
+    },
     
   ];
 
