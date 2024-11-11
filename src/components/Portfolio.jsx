@@ -13,7 +13,7 @@ function Portfolio() {
       githubLink: "https://github.com/nandyamit/Weather-App"
     },
     {
-      title: "Bucket List App",
+      title: "Bucket List",
       description: "A full-stack application built with React and Node.js",
       Technologies: "HTML, Javascript, REACT and Node.js",
       image: "/images/Bucklist App Image.jpg", 
@@ -21,12 +21,21 @@ function Portfolio() {
       githubLink: "https://github.com/nandyamit/bucketlist"
     },
     {
-      title: "Film Tracker App",
+      title: "Film Tracker",
       description: "A React-TypeScript application that helps you track films you want to watch and ones you've already seen. The app uses the OMDB API for film data and localStorage for persisting your film lists.",
       Technologies: "React 18.2.0, TypeScript 5.2.2, Vite 5.2.0, React Router DOM 6.23.1, React Icons 5.2.1, OMDB API, localStorage for data persistence.",
       image: "/images/Filmtracker_app.jpg", 
       deployedLink: "https://myfilmtracker.netlify.app/",
       githubLink: "https://github.com/nandyamit/Film-Tracker"
+    },
+
+    {
+      title: "Git Recuriter",
+      description: "Git Recuriter is a web-based tool that helps employers find potential candidates by leveraging the GitHub API. The application allows users to browse through GitHub profiles, save interesting candidates, and manage a list of potential recruits.",
+      Technologies: "React, TypeScript, Vite, React Router, GitHub REST API, Local Storage for data persistence, Tailwind CSS for styling.",
+      image: "/images/Git Recuirter.jpg",
+      deployedLink: "https://git-recruiter.onrender.com/",
+      githubLink: "https://github.com/nandyamit/Git-Recruit"
     },
     
   ];
