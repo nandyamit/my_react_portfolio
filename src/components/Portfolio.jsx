@@ -38,6 +38,24 @@ function Portfolio() {
       githubLink: "https://github.com/nandyamit/Git-Recruit"
     },
     
+    {
+      title: "Kanban-board",
+      description: "This Kanban Task Management App is a secure and efficient solution for organizing and tracking tasks using a Kanban board interface. It features JWT authentication for secure access and provides a user-friendly interface for managing tasks and users.",
+      Technologies: "Frontend: React.js with TypeScript, Routing: React Router, API Communication: Fetch API, Authentication: JSON Web Tokens (JWT), State Management: React Hooks (useState, useEffect, useRef), Styling: Custom CSS with responsive design.",
+      image: "/images/KanBan Board.png",
+      deployedLink: "https://kanban-board-application-7bc1.onrender.com",
+      githubLink: "https://github.com/nandyamit/Kanban-board-application"
+    },
+
+    {
+      title: "StallStarz- Restroom Finder App",
+      description: "StallStarz is a user-friendly web application designed to help users find nearby public restrooms. Listings include detailed amenity information and directions. Users also have the ability to rate and review public restroo",
+      Technologies: "Frontend: React, TypeScript, React Bootstrap, React Router, JWT Authentication, Backend: Node.js, Express, PostgreSQL, Sequelize ORM, JWT for authentication.",
+      image: "/images/StallStarz.png",
+      deployedLink: "https://stallstarz.onrender.com/login",
+      githubLink: "https://github.com/nandyamit/restroom-finder"
+    },
+
   ];
 
   return (
