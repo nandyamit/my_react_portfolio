@@ -14,7 +14,7 @@ function Portfolio() {
     },
     {
       title: "Bucket List",
-      description: "A full-stack application built with React and Node.js",
+      description: "A simple and intuitive bucket list application built with React and Vite, allowing users to track and manage their life goals and aspirations.",
       Technologies: "HTML, Javascript, REACT and Node.js",
       image: "/images/Bucklist App Image.jpg", 
       deployedLink: "https://gorgeous-ganache-bcb5d9.netlify.app/",
