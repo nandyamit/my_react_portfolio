@@ -24,8 +24,9 @@ function Resume() {
       'GitHub',
       'VS Code',
       'npm',
-      'Webpack',
-      'Jest'
+      'Render',
+      'Netlify'
+
     ]
   };
 
