@@ -10,7 +10,7 @@ function Header() {
   const navigation = [
     { name: 'About Me', path: '/about' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Contact', path: '/contact' },
+    //{ name: 'Contact', path: '/contact' },
     { name: 'Resume', path: '/resume' },
   ];
 
