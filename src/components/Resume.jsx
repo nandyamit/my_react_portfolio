@@ -36,7 +36,7 @@ function Resume() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-8 text-center">
           <a
-            href="/Profile.pdf"
+            href="/CV - Amit Nandy.pdf"
             download
             className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition-colors duration-300"
           >

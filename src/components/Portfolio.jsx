@@ -5,12 +5,12 @@ import Project from './Project';
 function Portfolio() {
   const projects = [
     {
-      title: "Weather Dashboard",
-      description: "The Weather Dashboard is a web application designed for travelers who want to see the weather outlook for multiple cities. This tool allows users to plan their trips according to current and future weather conditions in various locations.",
-      Technologies: "HTML, Javascript, Node.js with Express.js and Weather Data using OpenWeather API",
-      image: "/images/weather_app.jpg", 
-      deployedLink: "https://weather-app-u1xb.onrender.com/",
-      githubLink: "https://github.com/nandyamit/Weather-App"
+      title: "Cosmickavi.com",
+      description: "Cosmic Kavi (Astrologer Kavitha Nandy) is a professional astrology website offering personalized cosmic guidance and readings. Customers can navigate through About us page and Services offered page to learn more and use the contact page to get in touch with the astrologer. ",
+      Technologies: "React 18, TypeScript, AWS S3, AWS CloudFront, AWS Lambda, AWS API Gateway, React Router, Webpack 5, CSS3 Modules, GitHub Actions",
+      image: "/images/Cosmic Kavi.jpg", 
+      deployedLink: "https://cosmickavi.com/",
+      githubLink: "https://github.com/nandyamit/kavisastro-website"
     },
     {
       title: "Bucket List",
@@ -27,33 +27,6 @@ function Portfolio() {
       image: "/images/Filmtracker_app.jpg", 
       deployedLink: "https://myfilmtracker.netlify.app/",
       githubLink: "https://github.com/nandyamit/Film-Tracker"
-    },
-
-    {
-      title: "Git Recuriter",
-      description: "Git Recuriter is a web-based tool that helps employers find potential candidates by leveraging the GitHub API. The application allows users to browse through GitHub profiles, save interesting candidates, and manage a list of potential recruits.",
-      Technologies: "React, TypeScript, Vite, React Router, GitHub REST API, Local Storage for data persistence, Tailwind CSS for styling.",
-      image: "/images/Git Recuirter.jpg",
-      deployedLink: "https://git-recruiter.onrender.com/",
-      githubLink: "https://github.com/nandyamit/Git-Recruit"
-    },
-    
-    {
-      title: "Kanban-board",
-      description: "This Kanban Task Management App is a secure and efficient solution for organizing and tracking tasks using a Kanban board interface. It features JWT authentication for secure access and provides a user-friendly interface for managing tasks and users.",
-      Technologies: "Frontend: React.js with TypeScript, Routing: React Router, API Communication: Fetch API, Authentication: JSON Web Tokens (JWT), State Management: React Hooks (useState, useEffect, useRef), Styling: Custom CSS with responsive design.",
-      image: "/images/KanBan Board.png",
-      deployedLink: "https://kanban-board-application-7bc1.onrender.com",
-      githubLink: "https://github.com/nandyamit/Kanban-board-application"
-    },
-
-    {
-      title: "StallStarz- Restroom Finder App",
-      description: "StallStarz is a user-friendly web application designed to help users find nearby public restrooms. Listings include detailed amenity information and directions. Users also have the ability to rate and review public restroo",
-      Technologies: "Frontend: React, TypeScript, React Bootstrap, React Router, JWT Authentication, Backend: Node.js, Express, PostgreSQL, Sequelize ORM, JWT for authentication.",
-      image: "/images/StallStarz.png",
-      deployedLink: "https://stallstarz.onrender.com/login",
-      githubLink: "https://github.com/nandyamit/restroom-finder"
     },
 
   ];

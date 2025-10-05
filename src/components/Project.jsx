@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Project({ title, image, deployedLink, githubLink, description }) {
+function Project({ title, image, deployedLink, githubLink, description, Technologies}) {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
       <img 
@@ -41,7 +41,8 @@ Project.propTypes = {
   image: PropTypes.string.isRequired,
   deployedLink: PropTypes.string.isRequired,
   githubLink: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
+  Technologies: PropTypes.string.isRequired
 };
 
 export default Project;
